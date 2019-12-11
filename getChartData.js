@@ -21,6 +21,4 @@ let getTop100 = (URL = 'https://www.billboard.com/charts/hot-100') => {
     })
 }
 
-// console.log(getTop100().then(data => console.log(data)));
-
 module.exports = getTop100

@@ -8,11 +8,13 @@ const fs = require('fs');
 
 youTube.setKey(process.env.YOUTUBE_KEY);
 
+// get chart data by scraping billboard
 const gotTop100 = async () => {
     let data = await getData();
     return data;
 }
 
+// get all the videos links to associated billboard chart
 const getYoutubeLink = (rank, title, cover) => {
     return new Promise((resolve, reject) => {
         youTube.search(title + ' Official Music Video', 2, function (error, result) {
@@ -71,13 +73,13 @@ const getVideos = () => {
     return data;
 };
 
+// saves object to disk
 const saveData = () => {
     getVideos()
         .then((result) => {
 
             let file = JSON.stringify(result, null, 2);
 
-            // console.log(result);
             fs.writeFile("data/top10.json", file, function (err) {
 
                 if (err) {
