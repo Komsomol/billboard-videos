@@ -4,7 +4,6 @@ const path = require("path");
 const port = process.env.PORT || 8081;
 var fs = require('fs');
 
-
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "views")));

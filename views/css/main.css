@@ -8,3 +8,10 @@ body {
         max-width:1200px;
     }
 }
+
+@media (min-width: 1000px) {
+    .modal-xl {
+        width: 90%;
+        max-width:1600px;
+    }
+}
